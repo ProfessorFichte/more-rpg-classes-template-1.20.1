@@ -1,9 +1,8 @@
-2.0.10
+2.0.9
+- BUGFIX: Fixed the error occurring when leaving the server causing the client crashing the game (something with the registry of my sounds was wrong)
+- added a Poison Smoke particle
 - fixed a typo in poison smoke particle
 - increased Frosted Particle Count
-
-2.0.9
-- added a Poison Smoke particle
 
 2.0.8
 - Changed Frosted & Frozen Solid Effect a tiny bit

@@ -41,7 +41,7 @@ public class MRPGCMod implements ModInitializer {
 			MRPGCEffects.register();
 			CompatDatapackLoader.register();
 			MoreParticles.register();
-			ModSounds.registerSounds();
+			ModSounds.register();
 			MoreSpellSchools.initialize();
 		}
 

@@ -28,7 +28,6 @@ public class MoreRPGClassesClient implements ClientModInitializer {
                 FrozenSolidRenderer.modelId
         ));
 
-
         ParticleFactoryRegistry.getInstance().register(MoreParticles.STUN_PAR, DamageParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(MoreParticles.BLOOD_DROP, RainSplashParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(MoreParticles.MOLTEN_ARMOR, RainSplashParticle.Factory::new);
