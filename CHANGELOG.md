@@ -1,3 +1,6 @@
+1.2.7
+- Frosted Effect cant be applied, if the target has the FrozenSolid Effect
+
 1.2.6
 - increased Frosted Particle Count
 - fixed a typo in the Poison Smoke Particle
