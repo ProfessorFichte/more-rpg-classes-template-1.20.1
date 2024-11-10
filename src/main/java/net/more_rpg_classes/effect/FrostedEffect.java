@@ -14,11 +14,16 @@ public class FrostedEffect extends StatusEffect {
 
     public void onApplied(LivingEntity entity,  int amplifier) {
         super.onApplied(entity, amplifier);
-        entity.setFrozenTicks(entity.getFrozenTicks() + (60 * amplifier));
-        if(amplifier == MRPGCMod.effectsConfig.value.frosted_amplifier_frozen_solid_conversion){
-            entity.addStatusEffect(new StatusEffectInstance(MRPGCEffects.FROZEN_SOLID.registryEntry,100,0,false,false,true));
+        if(!entity.hasStatusEffect(MRPGCEffects.FROZEN_SOLID.registryEntry)){
+            entity.setFrozenTicks(entity.getFrozenTicks() + (60 * amplifier));
+            if(amplifier == MRPGCMod.effectsConfig.value.frosted_amplifier_frozen_solid_conversion){
+                entity.addStatusEffect(new StatusEffectInstance(MRPGCEffects.FROZEN_SOLID.registryEntry,100,0,false,false,true));
+                entity.removeStatusEffect(MRPGCEffects.FROSTED.registryEntry);
+            }
+        }else{
             entity.removeStatusEffect(MRPGCEffects.FROSTED.registryEntry);
         }
+
     }
 
 }
