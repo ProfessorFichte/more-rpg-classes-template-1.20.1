@@ -1,5 +1,8 @@
 1.2.7
+- Changed FrozenSolid and Frosted Effect logic again
 - Frosted Effect cant be applied, if the target has the FrozenSolid Effect
+- added a Helper Method for Spawning A Spell Cloud
+
 
 1.2.6
 - increased Frosted Particle Count
@@ -23,7 +26,7 @@
 
 1.2.1
 - tweaked some animations and shifted some of them to the Berserker Mod
-- - made rage damage calc clearer, configurable & changed it, so rage has more impact the more you have
+- made rage damage calc clearer, configurable & changed it, so rage has more impact the more you have
 - made playerentitymixin code more clean for better visibility
 - added 15% multiplier for the rage attribute in the simply skills compat datapack
 
