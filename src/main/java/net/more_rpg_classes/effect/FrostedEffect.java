@@ -15,7 +15,7 @@ public class FrostedEffect extends StatusEffect {
     }
 
     public void applyUpdateEffect(LivingEntity livingEntity, int pAmplifier) {
-        livingEntity.setFrozenTicks(livingEntity.getFrozenTicks() + 5);
+        livingEntity.setFrozenTicks(livingEntity.getFrozenTicks() + 3);
         super.applyUpdateEffect(livingEntity, pAmplifier);
     }
 

@@ -19,7 +19,7 @@ public class FrozenSolidEffect extends StatusEffect {
             } else if (livingEntity.isInLava()) {
                 livingEntity.removeStatusEffect(MRPGCEffects.FROZEN_SOLID);
             }
-            livingEntity.setFrozenTicks(livingEntity.getFrozenTicks() + 10);
+            livingEntity.setFrozenTicks(livingEntity.getFrozenTicks() + 5);
             super.applyUpdateEffect(livingEntity, pAmplifier);
     }
 
