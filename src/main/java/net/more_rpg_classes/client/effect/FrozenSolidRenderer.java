@@ -20,7 +20,9 @@ public class FrozenSolidRenderer implements CustomModelStatusEffect.Renderer{
     @Override
     public void renderEffect(int amplifier, LivingEntity livingEntity, float delta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light) {
         matrixStack.push();
-        matrixStack.translate(0, 0.7, 0);
+        matrixStack.translate(0, 0.6, 0);
+        float scale = livingEntity.getScale();
+        matrixStack.scale(scale + 0.25F  ,scale  , scale + 0.25F);
         CustomModels.render(RENDER_LAYER, MinecraftClient.getInstance().getItemRenderer(), modelId, matrixStack, vertexConsumers, light, livingEntity.getId());
         matrixStack.pop();
     }

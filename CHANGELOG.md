@@ -1,5 +1,8 @@
-2.0.10
+2.0.10 - 1.21.1
 - Frosted Effect cant be applied if the entity has the Frozen Solid Effect
+- changed frozen ticks
+- Freeze Immune Entites are not affected by Frosted & Frozen Solid Effect
+- Frozen Solid Effect Visual Model now scales with target
 
 2.0.9
 - BUGFIX: Fixed the error occurring when leaving the server causing the client crashing the game (something with the registry of my sounds was wrong)

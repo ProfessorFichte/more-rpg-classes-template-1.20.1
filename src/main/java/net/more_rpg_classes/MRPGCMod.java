@@ -14,6 +14,7 @@ import net.tinyconfig.ConfigManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class MRPGCMod implements ModInitializer {
 	public static final String MOD_ID = "more_rpg_classes";
 	public static final Logger LOGGER = LoggerFactory.getLogger("more_rpg_classes");

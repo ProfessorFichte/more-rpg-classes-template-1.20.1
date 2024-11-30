@@ -1,8 +1,12 @@
 package net.more_rpg_classes.effect;
 
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.registry.tag.EntityTypeTags;
+
+import static net.more_rpg_classes.util.CustomMethods.stackFreezeStacks;
 
 public class FrozenSolidEffect extends StatusEffect {
 
@@ -10,15 +14,24 @@ public class FrozenSolidEffect extends StatusEffect {
         super(statusEffectCategory, color);
     }
 
-    @Override
-    public boolean applyUpdateEffect(LivingEntity pLivingEntity, int pAmplifier) {
-        pLivingEntity.setFrozenTicks(pLivingEntity.getFrozenTicks() + 1);
-        if(pLivingEntity.isOnFire()){
-           return pLivingEntity.removeStatusEffect(MRPGCEffects.FROZEN_SOLID.registryEntry);
-        } else if (pLivingEntity.isInLava()) {
-            return pLivingEntity.removeStatusEffect(MRPGCEffects.FROZEN_SOLID.registryEntry);
+    public void onApplied(LivingEntity livingEntity,  int amplifier) {
+        super.onApplied(livingEntity, amplifier);
+        EntityType<?> type = livingEntity.getType();
+        if(!type.isIn(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)) {
+            stackFreezeStacks(livingEntity,40);
+        } else{
+            livingEntity.removeStatusEffect(MRPGCEffects.FROZEN_SOLID.registryEntry);
         }
-        super.applyUpdateEffect(pLivingEntity, pAmplifier);
+
+    }
+
+    @Override
+    public boolean applyUpdateEffect(LivingEntity livingEntity, int pAmplifier) {
+        stackFreezeStacks(livingEntity,2);
+        if(livingEntity.isOnFire() || livingEntity.isInLava()){
+           return livingEntity.removeStatusEffect(MRPGCEffects.FROZEN_SOLID.registryEntry);
+        }
+        super.applyUpdateEffect(livingEntity, pAmplifier);
         return true;
     }
 
@@ -27,7 +40,4 @@ public class FrozenSolidEffect extends StatusEffect {
         return true;
     }
 
-    public static void onRemove(LivingEntity entity) {
-        entity.setFrozenTicks(entity.getFrozenTicks() + 100);
-    }
 }
