@@ -1,3 +1,7 @@
+2.0.11 - 1.21.1
+- fixed an issue apply status effect Helper Method
+- forgot Runes - Mod dependency causing a crash
+
 2.0.10 - 1.21.1
 - Frosted Effect cant be applied if the entity has the Frozen Solid Effect
 - changed frozen ticks
