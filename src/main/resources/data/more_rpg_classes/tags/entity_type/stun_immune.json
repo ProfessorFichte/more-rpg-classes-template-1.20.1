@@ -4,6 +4,7 @@
     "minecraft:ender_dragon",
     "minecraft:wither",
     "minecraft:elder_guardian",
+    "minecraft:warden",
     {
       "id": "#c:bosses",
       "required": false
