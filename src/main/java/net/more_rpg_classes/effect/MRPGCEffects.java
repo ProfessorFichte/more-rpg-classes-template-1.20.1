@@ -37,7 +37,7 @@ public class MRPGCEffects {
     }
 
     public static final Entry MOLTEN_ARMOR = new Entry("molten_armor", new MoltenArmorEffect(StatusEffectCategory.HARMFUL,0xdd4e00));
-    public static final Entry STUNNED = new Entry("stun", new CustomStatusEffect(StatusEffectCategory.HARMFUL,0xfffeca));
+    public static final Entry STUNNED = new Entry("stun", new StunEffect(StatusEffectCategory.HARMFUL,0xfffeca));
     public static final Entry FROZEN_SOLID = new Entry("frozen_solid", new FrozenSolidEffect(StatusEffectCategory.HARMFUL, 0x3beeff));
     public static final Entry COLLECTED_SOUL = new Entry("collected_soul", new CustomStatusEffect(StatusEffectCategory.BENEFICIAL, 0x01d9cf));
     public static final Entry GRIEVOUS_WOUNDS = new Entry("grievous_wounds", new CustomStatusEffect(StatusEffectCategory.HARMFUL, 0x01d9cf));

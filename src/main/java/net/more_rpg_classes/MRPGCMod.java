@@ -1,6 +1,7 @@
 package net.more_rpg_classes;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 import net.more_rpg_classes.client.particle.MoreParticles;
 import net.more_rpg_classes.compat.CompatDatapackLoader;
 import net.more_rpg_classes.config.EffectsConfig;
@@ -45,6 +46,9 @@ public class MRPGCMod implements ModInitializer {
 			ModSounds.register();
 			MoreSpellSchools.initialize();
 		}
+	public static Identifier id(String path) {
+		return Identifier.of(MOD_ID, path);
+	}
 
 }
 

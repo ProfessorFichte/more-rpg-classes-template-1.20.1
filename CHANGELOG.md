@@ -1,3 +1,6 @@
+2.0.12 - 1.21.1
+- added stun immunity entity type tag
+
 2.0.11 - 1.21.1
 - fixed an issue apply status effect Helper Method
 - forgot Runes - Mod dependency causing a crash
