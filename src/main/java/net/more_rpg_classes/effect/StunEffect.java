@@ -15,7 +15,7 @@ public class StunEffect extends StatusEffect {
         super.onApplied(livingEntity, amplifier);
         EntityType<?> type = livingEntity.getType();
         if(type.isIn(MRPGCEntityTags.STUN_IMMUNE)) {
-            livingEntity.removeStatusEffect(MRPGCEffects.FROSTED.registryEntry);
+            livingEntity.removeStatusEffect(MRPGCEffects.STUNNED.registryEntry);
 
         }
 
