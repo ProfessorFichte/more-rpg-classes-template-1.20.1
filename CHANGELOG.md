@@ -1,3 +1,6 @@
+2.0.13 - 1.21.1
+- Stunned Effect Error Hotfix
+
 2.0.12 - 1.21.1
 - added stun immunity entity type tag
 
