@@ -1,6 +1,7 @@
 2.0.14 - 1.21.1
 - Rage Damage Calculation was changed to % of missing health instead of missing health amount
-- This change was done due to rage being to broken in modded environments where health gets increased
+- This change was done due to rage being too broken in modded environments where health gets increased
+- The Rage Attribute still enhances this calculation on increased damage
 
 2.0.13 - 1.21.1
 - Stunned Effect Error Hotfix
