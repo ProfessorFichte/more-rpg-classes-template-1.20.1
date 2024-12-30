@@ -1,8 +1,10 @@
-1.2.7
+1.2.7 - 1.20.1
 - Changed FrozenSolid and Frosted Effect logic again
 - Frosted Effect cant be applied, if the target has the FrozenSolid Effect
 - added a Helper Method for Spawning A Spell Cloud
-
+- Rage Damage Calculation was changed to % of missing health instead of missing health amount
+- This change was done due to rage being too broken in modded environments where health gets increased
+- The Rage Attribute still enhances this calculation on increased damage
 
 1.2.6
 - increased Frosted Particle Count
