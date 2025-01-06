@@ -1,3 +1,6 @@
+2.0.15 - 1.21.1
+- Fix applyStatusEffect Method
+
 2.0.14 - 1.21.1
 - Rage Damage Calculation was changed to % of missing health instead of missing health amount
 - This change was done due to rage being too broken in modded environments where health gets increased
@@ -16,7 +19,7 @@
 2.0.10 - 1.21.1
 - Frosted Effect cant be applied if the entity has the Frozen Solid Effect
 - changed frozen ticks
-- Freeze Immune Entites are not affected by Frosted & Frozen Solid Effect
+- Freeze Immune Entities are not affected by Frosted & Frozen Solid Effect
 - Frozen Solid Effect Visual Model now scales with target
 
 2.0.9

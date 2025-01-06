@@ -11,8 +11,6 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
-import net.more_rpg_classes.MRPGCMod;
-import net.more_rpg_classes.damage.BleedingDamageSource;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_engine.internals.WorldScheduler;
 import net.spell_engine.internals.casting.SpellCast;
@@ -23,7 +21,6 @@ import net.spell_power.api.SpellSchool;
 import java.util.*;
 import java.util.function.Predicate;
 
-import static net.more_rpg_classes.MRPGCMod.MOD_ID;
 import static net.spell_engine.internals.SpellRegistry.getSpell;
 
 public class CustomMethods {
@@ -114,31 +111,25 @@ public class CustomMethods {
     public static void applyStatusEffect(LivingEntity target, int effectAmplifier,int effectDurationSeconds,RegistryEntry<StatusEffect> statusEffect,
                                          int maxStackAmplifier, boolean canStackAmplifier, boolean showIcon, boolean increaseDuration,
                                          int increaseEffectDurationSeconds){
-        if(canStackAmplifier){
+
             if(target.hasStatusEffect(statusEffect)){
                 int currentAmplifier = target.getStatusEffect(statusEffect).getAmplifier();
                 int currentDuration = target.getStatusEffect(statusEffect).getDuration();
+                int increaseAmp = 0;
                 if(increaseDuration){
                     currentDuration = currentDuration + (increaseEffectDurationSeconds*20);
                 }
-                if(currentAmplifier<=maxStackAmplifier){
-                    target.addStatusEffect(new StatusEffectInstance(statusEffect, currentDuration, effectAmplifier+1, false, false, showIcon));
+                if(canStackAmplifier){
+                    increaseAmp = increaseAmp + 1;
+                }
+                if(currentAmplifier<maxStackAmplifier){
+                    target.addStatusEffect(new StatusEffectInstance(statusEffect, currentDuration, currentAmplifier + increaseAmp, false, false, showIcon));
                 }else{
                     target.addStatusEffect(new StatusEffectInstance(statusEffect, currentDuration, maxStackAmplifier, false, false, showIcon));
                 }
             }else{
                 target.addStatusEffect(new StatusEffectInstance(statusEffect, effectDurationSeconds*20, effectAmplifier, false, false, showIcon));
             }
-        }else{
-            if(!target.hasStatusEffect(statusEffect)){
-                target.addStatusEffect(new StatusEffectInstance(statusEffect, effectDurationSeconds*20, effectAmplifier, false, false, showIcon));
-            }else{
-                int currentAmplifier = target.getStatusEffect(statusEffect).getAmplifier();
-                int currentDuration = target.getStatusEffect(statusEffect).getDuration();
-                target.addStatusEffect(new StatusEffectInstance(statusEffect, currentDuration, currentAmplifier, false, false, showIcon));
-            }
-
-        }
     }
 
     public static void spellSchoolDamageCalculation(SpellSchool spellSchool, float damageMultiplication, LivingEntity target, PlayerEntity attacker){
