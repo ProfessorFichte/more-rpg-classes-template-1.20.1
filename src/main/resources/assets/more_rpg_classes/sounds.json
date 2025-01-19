@@ -39,9 +39,9 @@
       "more_rpg_classes:earth_magic_impact2"
     ]
   },
-  "air_magic_cast2": {
+  "air_magic_cast1": {
     "sounds": [
-      "more_rpg_classes:air_magic_cast2"
+      "more_rpg_classes:air_magic_cast1"
     ]
   },
   "air_magic_impact1": {
