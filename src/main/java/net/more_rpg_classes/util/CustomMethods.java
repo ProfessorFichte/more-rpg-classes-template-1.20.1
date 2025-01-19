@@ -11,6 +11,7 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
+import net.spell_engine.api.spell.registry.SpellRegistry;
 import net.spell_engine.internals.SpellHelper;
 import net.spell_engine.internals.WorldScheduler;
 import net.spell_engine.internals.casting.SpellCast;
@@ -20,8 +21,6 @@ import net.spell_power.api.SpellSchool;
 
 import java.util.*;
 import java.util.function.Predicate;
-
-import static net.spell_engine.internals.SpellRegistry.getSpell;
 
 public class CustomMethods {
     public static boolean clearNegativeEffects(LivingEntity entity, boolean debuff) {
@@ -51,7 +50,9 @@ public class CustomMethods {
             if (!aoe) {
                 list.add(target);
             } else {
-                float range = getSpell(Identifier.of(modId, pathSpell)).range;
+                var spellEntry = SpellRegistry.from(player.getWorld()).getEntry(Identifier.of(modId, pathSpell)).orElse(null);
+                var spell = spellEntry.value();
+                float range = spell.range;
                 Predicate<Entity> selectionPredicate = (target2) -> {
                     return (TargetHelper.actionAllowed(TargetHelper.TargetingMode.AREA, TargetHelper.Intent.HARMFUL, player, target2)
                     );

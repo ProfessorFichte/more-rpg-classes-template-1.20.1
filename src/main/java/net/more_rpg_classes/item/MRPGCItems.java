@@ -8,7 +8,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.more_rpg_classes.MRPGCMod;
-import net.runes.api.RuneItems;
 
 import static net.more_rpg_classes.MRPGCMod.MOD_ID;
 
@@ -34,9 +33,9 @@ public class MRPGCItems {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
-            entries.addAfter(RuneItems.get(RuneItems.RuneType.SOUL),MRPGCItems.AQUA_STONE);
-            entries.addAfter(RuneItems.get(RuneItems.RuneType.SOUL),MRPGCItems.TERRA_STONE);
-            entries.addAfter(RuneItems.get(RuneItems.RuneType.SOUL),MRPGCItems.STORM_STONE);
+           entries.add(MRPGCItems.AQUA_STONE);
+            entries.add(MRPGCItems.TERRA_STONE);
+            entries.add(MRPGCItems.STORM_STONE);
         });
 
         MRPGCMod.LOGGER.info("Registering Mod Items for " + MOD_ID);

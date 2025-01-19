@@ -86,17 +86,11 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 	modImplementation("dev.emi:trinkets:${project.trinkets_version}")
-	modImplementation("maven.modrinth:runes:${project.runes_version}-fabric")
 	modImplementation("maven.modrinth:spell-power:${project.spell_power_version}-fabric")
 	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.0-rc.4")))
 	modImplementation("maven.modrinth:spell-engine:${project.spell_engine_version}")
 	modImplementation("mod.azure.azurelibarmor:azurelibarmor-fabric-${project.azure_mc_version}:${project.azure_lib_version}")
 
-
-	//modImplementation("maven.modrinth:rpgattr:${project.rpgattr_version}-fabric")
-	//modImplementation("maven.modrinth:berserker-rpg-class:${project.berserker_version}")
-	//modImplementation("maven.modrinth:forcemaster-rpg-class:${project.forcemaster_version}")
-	//modImplementation("maven.modrinth:witcher-rpg-class:${project.witcher_version}")
 
 }
 
