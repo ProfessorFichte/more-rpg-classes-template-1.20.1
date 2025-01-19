@@ -7,11 +7,39 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.particle.ParticleEffect;
+import net.spell_engine.utils.TargetHelper;
 
 import java.util.Iterator;
 import java.util.List;
 
 public class CustomMethods {
+
+    public boolean isProtected(Entity target, LivingEntity caster) {
+        Entity enemy = target;
+        if(target instanceof ProjectileEntity projectile){
+            enemy = projectile.getOwner();
+        }
+        var relation = TargetHelper.getRelation(caster, enemy);
+
+        switch (relation) {
+            case FRIENDLY, SEMI_FRIENDLY -> {
+                return true;
+            }
+            case NEUTRAL, MIXED, HOSTILE -> {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public static void stackFreezeStacks(LivingEntity livingEntity, int amount){
+        int actualFrozenTicks = livingEntity.getFrozenTicks();
+        if(actualFrozenTicks >= 140){
+            livingEntity.setFrozenTicks(actualFrozenTicks + amount);
+        }else{
+            livingEntity.setFrozenTicks(140);
+        }
+    }
 
     public static void increaseAmpByChance(
             LivingEntity entity, StatusEffect statusEffect, int duration, int amplifier, int max_amp, int chance) {

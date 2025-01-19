@@ -1,3 +1,7 @@
+1.2.8 - 1.20.1
+- added and fixed some HelperMethods
+- fixed a missing sound error
+
 1.2.7 - 1.20.1
 - Changed FrozenSolid and Frosted Effect logic again
 - Frosted Effect cant be applied, if the target has the FrozenSolid Effect
