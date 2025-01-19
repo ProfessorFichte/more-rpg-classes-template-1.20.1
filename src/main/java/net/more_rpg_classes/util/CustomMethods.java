@@ -37,12 +37,11 @@ public class CustomMethods {
 
     public static void stackFreezeStacks(LivingEntity livingEntity, int amount){
         int actualFrozenTicks = livingEntity.getFrozenTicks();
-        if(actualFrozenTicks != 160){
+        if(actualFrozenTicks >= 140){
             livingEntity.setFrozenTicks(actualFrozenTicks + amount);
         }else{
-            livingEntity.setFrozenTicks(160);
+            livingEntity.setFrozenTicks(140);
         }
-
     }
 
     public static void executeSpellSpellEngine(PlayerEntity player, LivingEntity target, String modId, String pathSpell,
