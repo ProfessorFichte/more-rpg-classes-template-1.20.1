@@ -1,6 +1,7 @@
 # 2.1.0 - 1.21.1
 - Spell Engine 1.4 Update
 - created "vulnerable_to_water_spells" entity type tag, for water spell power spells
+- - created "resistant_to_water_spells" entity type tag, for water spell power spells
 
 2.0.15 - 1.21.1
 - Fix applyStatusEffect Method
